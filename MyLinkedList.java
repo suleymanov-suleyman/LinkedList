@@ -21,14 +21,22 @@ class MyLinkedList<T> {
     public void add(T data, T searchedIndexData) {
         Node newNode = new Node<T>(data, null);
         Node<T> temp = head;
+        boolean flag = false;
         if (head == null) {
             head = newNode;
+            System.out.println("Linked list is empty. New node is now your head node");
             return;
         }
         while (temp.next != null) {
             while (temp.data == searchedIndexData) {
-
+                newNode = temp.next;
+                temp.next = newNode;
+                flag = true;
             }
+            temp = temp.next;
+        }
+        if (!flag) {
+            temp.next = newNode;
         }
     }
 
