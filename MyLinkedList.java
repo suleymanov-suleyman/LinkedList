@@ -5,7 +5,7 @@ class MyLinkedList<T> {
         head = null;
     }
 
-    public void add(T data) {
+    public void addLast(T data) {
         Node newNode = new Node<T>(data, null);
         if (head == null) {
             head = newNode;
@@ -19,7 +19,7 @@ class MyLinkedList<T> {
         }
     }
 
-    public void add(T data, T searchedIndexData) {
+    public void insertAt(T data, T searchedIndexData) {
         Node newNode = new Node<T>(data, null);
         Node<T> temp = head;
         boolean flag = false;
