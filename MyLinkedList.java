@@ -9,6 +9,7 @@ class MyLinkedList<T> {
         Node newNode = new Node<T>(data, null);
         if (head == null) {
             head = newNode;
+            System.out.println("Linked list is empty. New node is now your head node");
         } else {
             Node<T> temp = head;
             while (temp.next != null) {
@@ -35,15 +36,20 @@ class MyLinkedList<T> {
             }
             temp = temp.next;
         }
+        if (flag) {
+            System.out.println("Node added next to your desired node!");
+        }
         if (!flag) {
             temp.next = newNode;
+            System.out.println("Searched node do not founded. New node added next to last node!");
         }
     }
 
     public void printList() {
         Node<T> temp = head;
         while (temp.next != null) {
-            System.out.print(temp.data + "=>");
+            System.out.println("LinkedList: ");
+            System.out.print(temp.data + " => ");
             temp = temp.next;
         }
         System.out.print("null");
