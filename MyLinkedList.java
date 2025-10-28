@@ -14,6 +14,7 @@ class MyLinkedList<T> {
             Node<T> temp = head;
             while (temp.next != null) {
                 temp = temp.next;
+                System.out.println("Node added to last");
             }
             temp.next = newNode;
         }
@@ -21,7 +22,8 @@ class MyLinkedList<T> {
 
     public void addFirst(T data) {
         Node newNode = new Node<T>(data, head);
-
+        head = newNode;
+        System.out.println("Now new node is first node");
     }
 
     public void insertAt(T data, T searchedIndexData) {
@@ -51,12 +53,15 @@ class MyLinkedList<T> {
     }
 
     public void printList() {
+        if (head == null) {
+            System.out.println("LinkedList is empty!");
+        }
         Node<T> temp = head;
-        while (temp.next != null) {
-            System.out.println("LinkedList: ");
+        System.out.println("LinkedList: ");
+        while (temp != null) {
             System.out.print(temp.data + " => ");
             temp = temp.next;
         }
-        System.out.print("null");
+        System.out.println("null");
     }
 }
