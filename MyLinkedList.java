@@ -19,6 +19,11 @@ class MyLinkedList<T> {
         }
     }
 
+    public void addFirst(T data) {
+        Node newNode = new Node<T>(data, head);
+
+    }
+
     public void insertAt(T data, T searchedIndexData) {
         Node newNode = new Node<T>(data, null);
         Node<T> temp = head;
