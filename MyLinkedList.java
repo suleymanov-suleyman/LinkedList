@@ -6,7 +6,7 @@ class MyLinkedList<T> {
     }
 
     public void addLast(T data) {
-        Node newNode = new Node<T>(data, null);
+        Node<T> newNode = new Node<T>(data, null);
         if (head == null) {
             head = newNode;
             System.out.println("Linked list is empty. New node is now your head node");
@@ -21,13 +21,13 @@ class MyLinkedList<T> {
     }
 
     public void addFirst(T data) {
-        Node newNode = new Node<T>(data, head);
+        Node<T> newNode = new Node<T>(data, head);
         head = newNode;
         System.out.println("Now new node is first node");
     }
 
     public void insertAt(T data, T searchedIndexData) {
-        Node newNode = new Node<T>(data, null);
+        Node<T> newNode = new Node<T>(data, null);
         Node<T> temp = head;
         boolean flag = false;
         if (head == null) {
