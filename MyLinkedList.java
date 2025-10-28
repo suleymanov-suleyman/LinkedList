@@ -36,12 +36,20 @@ class MyLinkedList<T> {
             return;
         }
         while (temp.next != null) {
-            while (temp.data == searchedIndexData) {
-                newNode = temp.next;
-                temp.next = newNode;
-                flag = true;
+            if (flag) {
+                break;
+            } else {
+                while (temp.data == searchedIndexData) {
+                    if (flag) {
+                        break;
+                    } else {
+                        newNode = temp.next;
+                        temp.next = newNode;
+                        flag = true;
+                    }
+                }
+                temp = temp.next;
             }
-            temp = temp.next;
         }
         if (flag) {
             System.out.println("Node added next to your desired node!");
