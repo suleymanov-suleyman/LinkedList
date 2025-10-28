@@ -14,8 +14,8 @@ class MyLinkedList<T> {
             Node<T> temp = head;
             while (temp.next != null) {
                 temp = temp.next;
-                System.out.println("Node added to last");
             }
+            System.out.println("Node added to last");
             temp.next = newNode;
         }
     }
