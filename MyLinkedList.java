@@ -8,36 +8,36 @@ class MyLinkedList<T> {
     public void deleteLast() {
         Node<T> temp = head;
         if (temp == null) {
-            System.out.println("LinkedList emtpy! Nothing deleted!");
+            System.out.println("Delete Last: " + "LinkedList emtpy! Nothing deleted!");
             return;
         }
         while (temp.next.next != null) {
             temp = temp.next;
         }
         temp.next = null;
-        System.out.println("Last node deleted");
+        System.out.println("Delete Last: " + "Last node deleted");
     }
 
     public void deleteFirst() {
         if (head == null) {
-            System.out.println("LinkedList emtpy! Nothing deleted!");
+            System.out.println("Delete First: " + "LinkedList emtpy! Nothing deleted!");
             return;
         }
         head = head.next;
-        System.out.println("First node deleted!");
+        System.out.println("Delete First: " + "First node deleted!");
     }
 
     public void addLast(T data) {
         Node<T> newNode = new Node<T>(data, null);
         if (head == null) {
             head = newNode;
-            System.out.println("Linked list is empty. New node is now your head node");
+            System.out.println("Add Last: " + "Linked list is empty. New node is now your head node");
         } else {
             Node<T> temp = head;
             while (temp.next != null) {
                 temp = temp.next;
             }
-            System.out.println("Node added to last");
+            System.out.println("Add Last: " + "Node added to last");
             temp.next = newNode;
         }
     }
@@ -45,7 +45,7 @@ class MyLinkedList<T> {
     public void addFirst(T data) {
         Node<T> newNode = new Node<T>(data, head);
         head = newNode;
-        System.out.println("Now new node is first node");
+        System.out.println("Add First: " + "Now new node is first node");
     }
 
     public void insertAt(T data, T searchedIndexData) {
@@ -54,7 +54,7 @@ class MyLinkedList<T> {
         boolean flag = false;
         if (head == null) {
             head = newNode;
-            System.out.println("Linked list is empty. New node is now your head node");
+            System.out.println("Insert At: " + "Linked list is empty. New node is now your head node");
             return;
         }
         while (temp != null) {
@@ -70,20 +70,20 @@ class MyLinkedList<T> {
             }
         }
         if (flag) {
-            System.out.println("Node added next to your desired node!");
+            System.out.println("Insert At: " + "Node added next to your desired node!");
         }
         if (!flag) {
-            System.out.println("Searched node do not founded!");
+            System.out.println("Insert At: " + "Searched node do not founded!");
         }
     }
 
     public void printList() {
         if (head == null) {
-            System.out.println("LinkedList is empty!");
+            System.out.println("Print List: " + "LinkedList is empty!");
             return;
         }
         Node<T> temp = head;
-        System.out.println("LinkedList: ");
+        System.out.println("Print List: ");
         while (temp != null) {
             System.out.print(temp.data + " => ");
             temp = temp.next;
