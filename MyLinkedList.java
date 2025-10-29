@@ -5,6 +5,15 @@ class MyLinkedList<T> {
         head = null;
     }
 
+    public void deleteLast() {
+        Node<T> temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        System.out.println("Last node deleted");
+    }
+
     public void addLast(T data) {
         Node<T> newNode = new Node<T>(data, null);
         if (head == null) {

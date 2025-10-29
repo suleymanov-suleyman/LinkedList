@@ -11,6 +11,8 @@ public class Main {
         linkedList.printList();
         linkedList.addLast(5);
         linkedList.printList();
+        linkedList.deleteLast();
+        linkedList.printList();
     }
 
 }
