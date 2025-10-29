@@ -35,18 +35,14 @@ class MyLinkedList<T> {
             System.out.println("Linked list is empty. New node is now your head node");
             return;
         }
-        while (temp.next != null) {
+        while (temp != null) {
             if (flag) {
                 break;
             } else {
-                while (temp.data == searchedIndexData) {
-                    if (flag) {
-                        break;
-                    } else {
-                        newNode = temp.next;
-                        temp.next = newNode;
-                        flag = true;
-                    }
+                if (temp.data.equals(searchedIndexData)) {
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                    flag = true;
                 }
                 temp = temp.next;
             }
@@ -55,8 +51,7 @@ class MyLinkedList<T> {
             System.out.println("Node added next to your desired node!");
         }
         if (!flag) {
-            temp.next = newNode;
-            System.out.println("Searched node do not founded. New node added next to last node!");
+            System.out.println("Searched node do not founded!");
         }
     }
 
