@@ -80,6 +80,7 @@ class MyLinkedList<T> {
     public void printList() {
         if (head == null) {
             System.out.println("LinkedList is empty!");
+            return;
         }
         Node<T> temp = head;
         System.out.println("LinkedList: ");
