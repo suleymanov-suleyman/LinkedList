@@ -13,6 +13,8 @@ public class Main {
         linkedList.printList();
         linkedList.deleteLast();
         linkedList.printList();
+        linkedList.deleteFirst();
+        linkedList.printList();
     }
 
 }

@@ -7,11 +7,24 @@ class MyLinkedList<T> {
 
     public void deleteLast() {
         Node<T> temp = head;
+        if (temp == null) {
+            System.out.println("LinkedList emtpy! Nothing deleted!");
+            return;
+        }
         while (temp.next.next != null) {
             temp = temp.next;
         }
         temp.next = null;
         System.out.println("Last node deleted");
+    }
+
+    public void deleteFirst() {
+        if (head == null) {
+            System.out.println("LinkedList emtpy! Nothing deleted!");
+            return;
+        }
+        head = head.next;
+        System.out.println("First node deleted!");
     }
 
     public void addLast(T data) {
